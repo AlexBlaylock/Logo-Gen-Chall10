@@ -2,6 +2,7 @@ const inquirer = require('inquirer');
 const Logo = require('./lib/logo.js');
 
 // used similar inquirer as last challenge.
+// used a very similar inquirer prompt in module 9, activity 20 and also for the challenge.
 inquirer.prompt([
     {
         type: 'input',
