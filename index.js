@@ -9,14 +9,9 @@ inquirer.prompt([
         name: 'text',
     },
     {
-        type: 'input',
-        message: "Enter a color for your logo's text (keyword or hexadecimal)",
-        name: 'textColor',
-    },
-    {
-        type: 'checkbox',
+        type: 'list',
         message: 'Select a shape for your logo',
-        name: 'shape',
+        name: 'shapeChoice',
         choices: [
             {
               name: 'Circle',
@@ -31,17 +26,22 @@ inquirer.prompt([
     },
     {
         type: 'input',
-        message: "Enter a color for your logo's shape (keyword or hexadecimal)",
+        message: "Enter a color for your logo's text (keyword or hexadecimal)",
+        name: 'textColor',
+    },
+    {
+        type: 'input',
+        message: "Enter a color for your logo's shape color (keyword or hexadecimal)",
         name: 'shapeColor',
     },
 ])
 
 .then(answers => {
-    const logo = new Logo(
+    const logo = new Logo (
         answers.text,
+        answers.shapeChoice,
         answers.textColor,
-        answers.shape,
-        answers.shapeColor
+        answers.shapeColor,
     );
 
     logo.generateSVG();
