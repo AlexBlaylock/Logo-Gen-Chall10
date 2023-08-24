@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const Logo = require('./lib/logo.js');
-const fs = require('fs');
 
+// used similar inquirer as last challenge.
 inquirer.prompt([
     {
         type: 'input',
@@ -14,13 +14,13 @@ inquirer.prompt([
         name: 'shapeChoice',
         choices: [
             {
-              name: 'Circle',
+              name: 'circle',
             },
             {
-              name: 'Square',
+              name: 'square',
             },
             {
-              name: 'Triangle',
+              name: 'triangle',
             },
         ]
     },
@@ -45,6 +45,4 @@ inquirer.prompt([
     );
 
     logo.generateSVG();
-
-    console.log("Generated logo.svg");
 });
